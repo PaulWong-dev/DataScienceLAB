@@ -1,6 +1,6 @@
 #HELLO
 
-weight <- 85
+weight <- 75
 height <- 1.75
 bmi <- weight / (height ^ 2)
 cat("Calculated BMI:", round(bmi, 1), "\n\n")
