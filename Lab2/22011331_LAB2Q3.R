@@ -1,0 +1,7 @@
+name <- readline(prompt = "Enter your name: ")
+phone <- readline(prompt = "Enter your phone number: ")
+name_upper <- toupper(name)
+first_3 <- substr(phone, 1, 3)
+len <- nchar(phone)
+last_4 <- substr(phone, len - 3, len)
+cat("Hi,", name_upper, ". A verification code has been sent to", first_3, "-xxxxx", last_4, "\n")
