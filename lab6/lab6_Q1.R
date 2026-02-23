@@ -4,4 +4,5 @@ attempts <- c(1, 3, 2, 3, 2, 1, 2)
 
 student_data <- data.frame(name, score, attempts)
 
+#output
 print(student_data)
