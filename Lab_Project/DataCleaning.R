@@ -1,7 +1,7 @@
 library(tidyverse)
 library(lubridate)
 
-raw_lines <- read_lines("Lab_Assignment/Unclean Dataset.csv", locale = locale(encoding = "ISO-8859-1"))
+raw_lines <- read_lines("Lab_Project/Unclean Dataset.csv", locale = locale(encoding = "ISO-8859-1"))
 
 # Extract the header
 header <- str_split(raw_lines[1], ",")[[1]] %>% str_trim()
@@ -75,4 +75,4 @@ df_clean <- df_raw %>%
 
 colSums(is.na(df_clean))
 
-write.csv(df_clean, "Lab_Assignment/Cleaned_Dataset.csv", row.names = FALSE)
+write.csv(df_clean, "Lab_Project/Cleaned_Dataset.csv")
