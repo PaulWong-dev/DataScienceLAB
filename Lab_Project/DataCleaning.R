@@ -42,16 +42,15 @@ df_clean <- df_raw %>%
     Age_Fixed = if_else(str_detect(Gender, "\\d"), str_extract(Gender, "\\d+"), as.character(Age)),
     Gender = if_else(str_detect(Gender, "\\d"), str_extract(Gender, "[A-Za-z]+"), Gender),
     Age = suppressWarnings(as.integer(Age_Fixed)),
-    Age = if_else(Age < 15 | Age > 100, NA_integer_, Age), # Handle the "4 year old" bug
+    Age = if_else(Age < 15 | Age > 100, NA_integer_, Age),
     
     # 3. Standardize Course Names
     Course = str_trim(Course),
     Course = case_when(
       str_detect(Course, "Machine Learn") ~ "Machine Learning",
       str_detect(Course, "Web Develop") ~ "Web Development",
-      str_detect(Course, "Data Analy") ~ "Data Science", # Unify Analysis/Analytics
-      Course == "4" ~ NA_character_, # Fix the "4" course error
-      TRUE ~ Course
+      str_detect(Course, "Data Analy") ~ "Data Science",
+      Course == "4" ~ NA_character_,
     ),
     
     # 4. The Payment
